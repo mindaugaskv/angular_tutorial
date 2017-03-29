@@ -12,6 +12,7 @@ export class DataServiceService {
 
   getData(): Promise<LegoPart[]>{
     return this.http.get('/api/parts')
+    .delay(2000)
     .toPromise()
     .then(response => {
         return response.json().data as LegoPart[];

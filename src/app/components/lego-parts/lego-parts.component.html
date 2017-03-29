@@ -1,7 +1,13 @@
-
-<div>
+<div *ngIf="isLoading">Siunčiami duomenys...</div>
+<div *ngIf="!isLoading">
 
   <table border="1px">
+    <tr>
+      <th>Spalva</th>
+      <th>Dydis</th>
+      <th>Tipas</th>
+      <th>Forma</th>
+    </tr>
     <tr *ngFor="let i of parts" (click)="item = i" [ngClass]="{selected: i == item}">
       <td>{{i.spalva}}</td>
       <td>{{i.dydis}}</td>
@@ -9,10 +15,7 @@
       <td>{{forma}}</td>
     </tr>
   </table>
-
+  <button (click)="addNewPart()">Add New Part</button>
 </div>
 
-<button (click)="addNewPart()">Add New Part</button>
-
 <app-lego-part-details *ngIf="item" [itemDetails]="item" (saveEvent)="addNewItem($event)"></app-lego-part-details>
-

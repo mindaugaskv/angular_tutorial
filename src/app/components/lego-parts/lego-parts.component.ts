@@ -10,28 +10,25 @@ import { DataServiceService } from "app/services/data-service.service";
   providers: [DataServiceService]
 })
 export class LegoPartsComponent implements OnInit {
+  parts: LegoPart[];
+  item: LegoPart;
+  divToggle: boolean = true;
+  isLoading: boolean = false;
 
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
-    this.dataService.getData().then(c => this.parts = c );
+    this.isLoading = true;
+    this.dataService.getData().then(c => {
+      this.parts = c;
+      this.isLoading = false;
+    });
   }
 
-  parts: LegoPart[];
-
-  item: LegoPart;
-
-  toy: LegoToy = {
-    name: '', 
-    description: '', 
-    price: 1,
-    parts: null
-  };
-
-  divToggle: boolean= true;
-
   addNewItem(item: LegoPart){
+    //TODO: turi kviesti WebAPI:
     this.parts.push(item);
+
     this.item = null;
   }
 
