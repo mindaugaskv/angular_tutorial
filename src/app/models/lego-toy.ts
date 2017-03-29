@@ -6,4 +6,5 @@ export class LegoToy {
     description: string;
     price: number;
     parts: LegoPart[];
+    imageUrl: string;
 }

@@ -18,22 +18,28 @@ export class LegoPartsComponent implements OnInit {
   constructor(private dataService: DataServiceService) { }
 
   ngOnInit() {
+    this.refreshList();
+  }
+
+  saveItem(item: LegoPart){
+    this.item = null;
+
+    if(item == null) return;
+    this.dataService.addLegoPart(item);
+    
+    this.refreshList();
+  }
+
+  addNewPart(){
+    this.item = new LegoPart();
+  }
+
+  refreshList(){
     this.isLoading = true;
     this.dataService.getLegoParts().then(c => {
       this.parts = c;
       this.isLoading = false;
     });
-  }
-
-  addNewItem(item: LegoPart){
-    //TODO: turi kviesti WebAPI:
-    this.parts.push(item);
-
-    this.item = null;
-  }
-
-  addNewPart(){
-    this.item = new LegoPart();
   }
 }
 

@@ -20,4 +20,4 @@
   <button *ngIf="!item" (click)="addNewPart()" class="btn btn-primary">Add New Part</button>
 </div>
 
-<app-lego-part-details *ngIf="item" [itemDetails]="item" (saveEvent)="addNewItem($event)"></app-lego-part-details>
+<app-lego-part-details *ngIf="item" [itemDetails]="item" (saveEvent)="saveItem($event)"></app-lego-part-details>

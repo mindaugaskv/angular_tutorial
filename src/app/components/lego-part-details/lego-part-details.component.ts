@@ -22,4 +22,8 @@ export class LegoPartDetailsComponent implements OnInit {
   save(){
     this.saveEvent.emit(this.itemDetails);
   }
+
+  cancel(){
+    this.saveEvent.emit(null);
+  }
 }

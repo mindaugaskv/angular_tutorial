@@ -39,6 +39,10 @@ import { LegoToyDetailsComponent } from './components/lego-toy-details/lego-toy-
         component: LegoToysComponent
       },
       {
+        path: 'toy/:id',
+        component: LegoToyDetailsComponent
+      },
+      {
         path: 'parts',
         component: LegoPartsComponent
       }
