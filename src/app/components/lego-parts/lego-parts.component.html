@@ -1,0 +1,17 @@
+
+<div>
+
+  <table border="1px">
+    <tr *ngFor="let i of parts" (click)="item = i" [ngClass]="{selected: i == item}">
+      <td>{{i.spalva}}</td>
+      <td>{{i.dydis}}</td>
+      <td>{{i.tipas}}</td>
+      <td>{{forma}}</td>
+    </tr>
+  </table>
+
+</div>
+
+<button (click)="toggle()">Show/Hide</button>
+<app-lego-part-details [itemDetails]="item"></app-lego-part-details>
+
