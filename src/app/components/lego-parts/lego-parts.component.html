@@ -7,17 +7,17 @@
       <th>Spalva</th>
       <th>Dydis</th>
       <th>Tipas</th>
-      <th>Forma</th>
+      <th>Nuotrauka</th>
     </tr>
     <tr *ngFor="let i of parts" (click)="item = i" [ngClass]="{selected: i == item}">
       <td>{{i.id}}</td>
       <td>{{i.color}}</td>
       <td>{{i.size}}</td>
       <td>{{i.type}}</td>
-      <td>{{i.shape}}</td>
+      <td><img src="{{i.imageUrl}}" width="50px" /></td>
     </tr>
   </table>
-  <button (click)="addNewPart()" class="btn btn-primary">Add New Part</button>
+  <button *ngIf="!item" (click)="addNewPart()" class="btn btn-primary">Add New Part</button>
 </div>
 
 <app-lego-part-details *ngIf="item" [itemDetails]="item" (saveEvent)="addNewItem($event)"></app-lego-part-details>

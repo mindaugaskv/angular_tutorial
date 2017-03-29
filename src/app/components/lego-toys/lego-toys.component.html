@@ -1,3 +1,12 @@
-<p>
-  lego-toys works!
-</p>
+<div *ngIf="isLoading">Siunčiami duomenys...</div>
+<div *ngIf="!isLoading">
+  <div *ngFor="let i of legoToys">
+    {{i.id}}
+    {{i.name}}
+    {{i.description}}
+    {{i.price}}
+    <ul>
+      <li *ngFor="let p of i.parts">{{p.name}}</li> 
+    </ul>
+  </div>  
+</div>

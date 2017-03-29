@@ -19,7 +19,7 @@ export class LegoPartsComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.dataService.getData().then(c => {
+    this.dataService.getLegoParts().then(c => {
       this.parts = c;
       this.isLoading = false;
     });

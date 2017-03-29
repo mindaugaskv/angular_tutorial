@@ -3,40 +3,29 @@ import { LegoPart } from "app/models/lego-part";
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { LegoToy } from "app/models/lego-toy";
 
 @Injectable()
 export class DataServiceService {
 
-  constructor(private http: Http) { 
+  constructor(private http: Http) {
   }
 
-  getData(): Promise<LegoPart[]>{
-    return this.http.get('/api/parts')
-    .delay(2000)
-    .toPromise()
-    .then(response => {
-        return response.json().data as LegoPart[];
-    });
+  getLegoToys(): Promise<LegoToy[]> {
+    return this.http.get('/api/toys')
+      .delay(2000)
+      .toPromise()
+      .then(response => {
+        return response.json().data as LegoToy[];
+      });
+  }
 
-    // return new Promise<LegoPart[]>(
-    //   response => {
-    //     response(cArray)
-    //   }
-    // );     
+  getLegoParts(): Promise<LegoPart[]> {
+    return this.http.get('/api/parts')
+      .delay(2000)
+      .toPromise()
+      .then(response => {
+        return response.json().data as LegoPart[];
+      });    
   }
 }
-
-const cArray: LegoPart[] =[
-      {
-        color: 'reiksme',
-        dydis: 'reiksme',
-        tipas: 'reiksme',
-        forma: 'reiksme'
-      },
-      {
-        color: 'reiksme1',
-        dydis: 'reiksme1',
-        tipas: 'reiksme1',
-        forma: 'reiksm1e'
-      }
-    ];
