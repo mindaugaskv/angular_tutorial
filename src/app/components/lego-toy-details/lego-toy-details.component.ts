@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DataServiceService } from 'app/services/data-service.service';
 import { LegoToy } from 'app/models/lego-toy';
-import  { Location } from  '@angular/common';
+import { Location } from '@angular/common';
+import { LegoPart } from "app/models/lego-part";
 
 @Component({
   selector: 'app-lego-toy-details',
@@ -16,7 +17,8 @@ export class LegoToyDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private dataService: DataServiceService,
-    private location:  Location) { }
+    private location:  Location,
+    private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -24,8 +26,22 @@ export class LegoToyDetailsComponent implements OnInit {
     });
   }
 
-  goBack(): void{
+  goBack(): void{ 
     this.location.back();
+  }
+
+  saveItem(item: LegoToy){
+    this.dataService.saveLegoToy(item);
+    this.location.back();
+  }
+
+  removePart(part: LegoPart){
+    var index = this.legoToy.parts.findIndex(i => i.id == part.id);
+    this.legoToy.parts.splice(index, 1);
+  }
+
+  addPart(){
+    this.router.navigate(['/toy/add', this.legoToy.id]);
   }
 
   loadItem(id: string){

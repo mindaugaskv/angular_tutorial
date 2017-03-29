@@ -21,7 +21,6 @@ export class LegoToysComponent implements OnInit {
   }
 
   edit(item: LegoToy){
-    console.log(item);
     this.router.navigate(['/toy', item.id]);
   }
 

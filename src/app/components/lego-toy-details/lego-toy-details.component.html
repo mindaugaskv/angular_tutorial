@@ -47,12 +47,12 @@
     </div>
 
     Dalys:
-    <button class="btn btn-sm btn-primary">Pridėti dalį</button>
+    <button (click)="addPart()" class="btn btn-sm btn-primary">Pridėti dalį</button>
     <ul>
-      <li *ngFor="let p of legoToy.parts">{{p.name}} <button class="btn btn-xs">Pašalinti</button></li>
+      <li *ngFor="let p of legoToy.parts">{{p.name}} <button class="btn btn-xs" (click)="removePart(p)">Pašalinti</button></li>
     </ul>
     
-    <button (click)="edit(legoToy)" class="btn btn-primary">Saugoti</button>
+    <button (click)="saveItem(legoToy)" class="btn btn-primary">Saugoti</button>
     <button (click)="goBack()" class="btn btn-default">Atgal</button>
   </div>
 

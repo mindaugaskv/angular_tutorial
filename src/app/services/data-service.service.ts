@@ -7,7 +7,7 @@ import { LegoToy } from "app/models/lego-toy";
 
 @Injectable()
 export class DataServiceService {
-  delayTimeSec: number = 1500;
+  delayTimeSec: number = 1000;
 
   constructor(private http: Http) {
   }
@@ -29,6 +29,15 @@ export class DataServiceService {
         return response.json().data as LegoToy[];
       });
   }
+
+  saveLegoToy(toy: LegoToy): Promise<LegoToy> {
+    return this.http.post('/api/toys', toy)
+      .delay(this.delayTimeSec)
+      .toPromise()
+      .then(response => {
+        return response.json().data as LegoToy;
+      });
+  }  
 
   getLegoParts(): Promise<LegoPart[]> {
     return this.http.get('/api/parts')
