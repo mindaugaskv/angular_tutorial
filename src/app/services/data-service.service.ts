@@ -28,13 +28,13 @@ export class DataServiceService {
 
 const cArray: LegoPart[] =[
       {
-        spalva: 'reiksme',
+        color: 'reiksme',
         dydis: 'reiksme',
         tipas: 'reiksme',
         forma: 'reiksme'
       },
       {
-        spalva: 'reiksme1',
+        color: 'reiksme1',
         dydis: 'reiksme1',
         tipas: 'reiksme1',
         forma: 'reiksm1e'

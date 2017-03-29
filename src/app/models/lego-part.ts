@@ -1,6 +1,7 @@
 export class LegoPart {
-  public spalva: string;
-  public dydis: string;
-  public tipas: string;
-  public forma: string;    
+  public id: string;
+  public color: string;
+  public size: string;
+  public type: string;
+  public shape: string;    
 }

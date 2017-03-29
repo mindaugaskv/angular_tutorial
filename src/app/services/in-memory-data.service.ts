@@ -15,15 +15,17 @@ export class InMemoryDataService extends InMemoryDbService {
 
 const cArray: LegoPart[] =[
       {
-        spalva: 'reiksme',
-        dydis: 'reiksme',
-        tipas: 'reiksme',
-        forma: 'reiksme'
+        id: '1',
+        color: 'reiksme',
+        size: 'reiksme',
+        type: 'reiksme',
+        shape: 'reiksme'
       },
       {
-        spalva: 'reiksme1',
-        dydis: 'reiksme1',
-        tipas: 'reiksme1',
-        forma: 'reiksm1e'
+        id: '2',
+        color: 'reiksme1',
+        size: 'reiksme1',
+        type: 'reiksme1',
+        shape: 'reiksm1e'
       }
     ];
