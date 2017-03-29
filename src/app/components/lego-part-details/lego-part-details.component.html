@@ -1,19 +1,32 @@
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Spalva: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="itemDetails.spalva"/>
+    </div>
+  </div>
 
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Dydis: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="itemDetails.dydis"/>
+    </div>
+  </div>
 
-<h2>Select Lego Part Details</h2>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Tipas: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="itemDetails.tipas"/>
+    </div>
+  </div>
 
-<div>
-  <label>Spalva: </label>
-  <input type="text" [(ngModel)]="itemDetails.spalva"/>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Forma: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" [(ngModel)]="itemDetails.forma"/>  
+    </div>
+  </div>
 
-  <label>Dydis: </label>
-  <input type="text" [(ngModel)]="itemDetails.dydis"/>
+  <button (click)="save()" class="btn btn-primary">Save</button>
 
-  <label>Tipas: </label>
-  <input type="text" [(ngModel)]="itemDetails.tipas"/>
-
-  <label>Forma: </label>
-  <input type="text" [(ngModel)]="itemDetails.forma"/>
 </div>
-
-<button (click)="save()">Save</button>

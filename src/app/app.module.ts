@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LegoPartsComponent } from './components/lego-parts/lego-parts.component';
@@ -21,7 +21,8 @@ import { InMemoryDataService } from "app/services/in-memory-data.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    AlertModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
