@@ -12,6 +12,7 @@
 
 </div>
 
-<button (click)="toggle()">Show/Hide</button>
-<app-lego-part-details [itemDetails]="item" (modfiedEvent)="myChildEventFired($event)"></app-lego-part-details>
+<button (click)="addNewPart()">Add New Part</button>
+
+<app-lego-part-details *ngIf="item" [itemDetails]="item" (saveEvent)="addNewItem($event)"></app-lego-part-details>
 

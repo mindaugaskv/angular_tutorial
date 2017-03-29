@@ -17,9 +17,9 @@ export class LegoPartDetailsComponent implements OnInit {
   itemDetails: LegoPart;
 
   @Output()
-  modfiedEvent = new EventEmitter<string>();
+  saveEvent = new EventEmitter<LegoPart>();
 
-  modified(){
-    this.modfiedEvent.emit('Some message');
+  save(){
+    this.saveEvent.emit(this.itemDetails);
   }
 }

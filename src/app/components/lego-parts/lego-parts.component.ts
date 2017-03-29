@@ -41,12 +41,7 @@ export class LegoPartsComponent implements OnInit {
     }
   ];
 
-  item: LegoPart = {
-    spalva: 'reiksme',
-    dydis: 'reiksme',
-    tipas: 'reiksme',
-    forma: 'reiksme'
-  }
+  item: LegoPart;
 
   toy: LegoToy = {
     name: '', 
@@ -57,13 +52,13 @@ export class LegoPartsComponent implements OnInit {
 
   divToggle: boolean= true;
 
-  toggle(){
-    this.divToggle = !this.divToggle;
+  addNewItem(item: LegoPart){
+    this.parts.push(item);
+    this.item = null;
   }
 
-  myChildEventFired(event: string){
-    console.log(event);
+  addNewPart(){
+    this.item = new LegoPart();
   }
-
 }
 
