@@ -61,5 +61,9 @@ export class LegoPartsComponent implements OnInit {
     this.divToggle = !this.divToggle;
   }
 
+  myChildEventFired(event: string){
+    console.log(event);
+  }
+
 }
 

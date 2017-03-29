@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { LegoPart } from "app/models/lego-part";
 
 @Component({
@@ -12,7 +12,14 @@ export class LegoPartDetailsComponent implements OnInit {
   
   ngOnInit() {
   }
-
+  
   @Input()
   itemDetails: LegoPart;
+
+  @Output()
+  modfiedEvent = new EventEmitter<string>();
+
+  modified(){
+    this.modfiedEvent.emit('Some message');
+  }
 }

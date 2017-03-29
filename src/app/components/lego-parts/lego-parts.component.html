@@ -13,5 +13,5 @@
 </div>
 
 <button (click)="toggle()">Show/Hide</button>
-<app-lego-part-details [itemDetails]="item"></app-lego-part-details>
+<app-lego-part-details [itemDetails]="item" (modfiedEvent)="myChildEventFired($event)"></app-lego-part-details>
 
